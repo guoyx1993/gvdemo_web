@@ -1,0 +1,510 @@
+@import './../common/variables.less';
+@hero-bg:"hero-bg.jpg";
+@dota-bg:"dota-bg.jpg";
+@king-bg:"king-bg.jpg";
+.hero-bg,.dota-bg,.king-bg{
+	height: 1162px;
+}
+.hero-bg{
+	.bg-img(@hero-bg);
+}
+.dota-bg{
+	.bg-img(@dota-bg);
+}
+.king-bg{
+	.bg-img(@king-bg);
+}
+.carousel-match{
+	width: @percent100;
+	height: 390px;
+	.marginT(72px);
+	.marginB();
+}
+.match-left{
+	width: 894px;
+	.left;
+}
+.match-right{
+    .right;
+    width: 324px;
+}
+@bg-bottom1:"bg-bottom1.png";
+@bg-bottom2:"bg-bottom2.png";
+@bg-bottom3:"bg-bottom3.png";
+.game-header(@url){
+	height: 70px;
+	background: url("@{base}@{url}") bottom no-repeat;
+	min-width: 1234px;
+}
+.bg-bottom1{
+	.game-header(@bg-bottom1);
+}
+.bg-bottom2{
+	.game-header(@bg-bottom2);
+}
+.bg-bottom3{
+	.game-header(@bg-bottom3);
+}
+.game-header{
+	.marginT(50px);
+}
+.game-header .inner>div{
+    .left;
+    width: 60px;
+    .text-align();
+    .marginT(6px);
+    cursor: pointer;
+    .paddR(40px);
+}
+.game-header .inner>div:nth-child(1){
+    .marginL(-9px);
+}
+.game-header p{
+	.wh(25px,34px);
+	margin:0 auto;
+}
+.game-header span{
+	.color(#2f5465);
+	.font(12px);
+}
+.class-active span{
+	.color(#ffffff);
+}
+@hero-activity:"hero-activity.png";
+@dota-activity:"dota-activity.png";
+@king-activity:"king-activity.png";
+.activity-bg(@url){
+    .icon(417px,462px,@url);
+}
+.hero-activity{
+	.activity-bg(@hero-activity);
+}
+.dota-activity{
+	.activity-bg(@dota-activity);
+}
+.king-activity{
+	.activity-bg(@king-activity);
+}
+.activity-title{
+	.marginT(270px);
+	.marginL(60px);
+}
+.carousel-match .swiper-pagination{
+	bottom: 24px;
+}
+.carousel-title{
+	.color-t;
+	.absolute;
+	left: 24px;
+	bottom:24px;
+}
+.slider-time{
+	height: 76px;
+	line-height: 76px;
+	padding: 0 74px;
+}
+.slider-time .swiper-button-prev, .slider-time .swiper-button-next{
+	top: 60%!important;
+}
+.slider-time .swiper-container{
+    position: static!important;
+    .color(#f0e6d2);
+}
+.guess .game-item{
+	.relative;
+	.display(block);
+}
+.guess .game-item div>div,.sports .game-item div>div{
+	.float();
+	margin-top:10px;
+	margin-bottom: 10px;
+}
+.guess>li:nth-child(odd),.sports>li:nth-child(odd){
+	.bg-color(#041923);
+}
+.guess-n{
+	.marginT(8px);
+}
+
+.guess .column3,.guess .column5{
+	line-height: 50px;
+	.blod;
+	.font(16px);
+}
+.guess .column3{
+	.marginL(24px);
+}
+
+.sports .column1{
+	width: 400px;
+}
+.sports .c-num-red{
+    .marginR(24px);
+}
+.sports .column3,.sports .column4{
+	line-height: 50px;
+	.font(12px);
+}
+.sports .game-btn1,.sports .game-btn6{
+    margin-top: 22px!important;
+}
+.sports .column4{
+	margin:0 40px;
+}
+.sports .head-border{
+	.marginR(9px);
+	.marginT(5px);
+}
+.sports .game-name{
+    .vertical(super);
+}
+.sports .column1 .game-t{
+	.display(block);
+	.marginT(-10px);
+    .marginB(0);
+    .marginL(14px);
+}
+.sports .column4 .game-t{
+    .font(12px);
+}
+.new-banner{
+	img{
+		.wh(294px,164px);
+		margin:15px;
+	}
+	p{
+		height: 24px;
+		line-height: 24px;
+		background-color: rgba(0,0,0,0.5);
+		.logo-box-position(153px,15px);
+		width: 284px;
+		.font(12px);
+		.color-t;
+	}
+}
+.newsList{
+	.marginL(15px);
+	.marginR(15px);
+	li{
+		.paddB(15px);
+	}
+	img{
+		.wh(125px,70px);
+		.left;
+		.marginR(17px);
+	}
+	div{
+		.left;
+		span{
+			.font10;
+			color: #636d72;
+		}
+		.text-align(left);
+	}
+}
+.new-t{
+	.font(12px);
+	width: 152px;
+	.marginB(8px);
+	.marginT(5px;);
+	.color-t;
+	height: 36px;
+    line-height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.sports-anal{
+	.marginT(75px);
+	.tit{
+		height: 75px;
+		line-height: 75px;
+		.right{
+            .marginR(50px);
+		}
+		.left{
+			span{
+				width:119px;
+				.display(inline-block);
+				img{
+					margin:28px 0;
+				}
+			}
+		}
+	}
+}
+
+@sports-checked:"sports-checked.jpg";
+.sports-checked{
+	.text-align();
+	.wh(119px,75px);
+    background: url("@{base}@{sports-checked}") 0 bottom no-repeat;
+}
+.flag-t-left{
+	.marginR(9px);
+	.marginL(35px);
+}
+@team-bg:"team-bg.jpg";
+.sports-team{
+    .paddT(33px);
+    .icon(893px,202px,@team-bg);
+}
+@team-head:"team-head.png";
+.team-head{
+   .icon(96px,96px,@team-head);
+   .relative;
+   img{
+   	.wh(75px,75px);
+   	.radius(@percent100);
+   	.logo-box-position(11px,11px);
+   }
+   .marginT(-13px);
+   .marginL(28px);
+   .marginR(23px);
+}
+.colorb49656{
+	.color(#b49656);
+}
+.team-title{
+	.font(20px);
+	.colorb49656;
+	.blod;
+	.marginB(42px);
+}
+@lanunch-bg:"lanunch-bg.png";
+
+.c-number-blue{
+	.color(#08b2c9);
+}
+.launch-arena{
+	.relative;
+	.marginT(75px);
+	.icon(324px,306px,@lanunch-bg);
+	.text-align();
+	.number-img{
+		.marginT(40px);
+	}
+	.color-t{
+		.marginT(15px);
+	}
+	.color-grey{
+		.marginT(52px);
+	}
+	.append-btn{
+		.marginT(14px);
+		.marginL(55px);
+	}
+	.arena-number{
+		.logo-box-position(36px,150px);
+		.c-number-blue;
+		.font(20px);
+		.blod;
+	}
+	.reana-text-img{
+		.marginT();
+	}
+}
+
+.home .game-list li:nth-child(odd),.ranking-list li:nth-child(odd){
+	.bg-color(#041923);
+}
+.game2 .column1{
+    .marginT(10px);
+}
+.column2{
+	.marginR();
+}
+.column3 p,.column5 p{
+	.font(10px);
+	-webkit-transform:scale(0.8);
+	.marginB(5px);
+}
+.column4{
+	margin:0 47px;
+}
+.column6{
+    .marginL(25px);
+}
+.column-p{
+	margin: @12px 60px;
+	.text-align(left);
+}
+.col-num{
+	.marginT(22px); 
+}
+.game-title-match{
+	height: 75px;
+	line-height: 75px;
+	color: #cdbe91;
+	.text-align();
+}
+.marT60{
+	.marginT(60px);
+}
+.team-result{
+	.text-align(left);
+}
+.team-result>p{
+	line-height: 50px;
+	.marginT(-17px);
+    .font(16px);
+    .color-t;
+}
+.team-item{
+    .color-grey;
+    .marginR(16px);
+    .marginL(11px);
+}
+.marR16{
+	.marginR(16px);
+}
+.win(@left){
+	.wh(30px,30px);
+	.bg-img(@win);
+	.logo-box-position(8px,@left);
+}
+.win-left{
+	.win(-30px);
+}
+.win-right{
+	.win(42px);
+}
+.win-percent{
+	.marginR(68px);
+	.font(20px);
+	.color-t;
+	img{
+		.vertical(middle);
+		.marginR(5px);
+	}
+}
+.result-history{
+	.color(#deb360);
+	.marginT(30px);
+	.marginR(68px);
+	.text-align(right);
+}
+@controller-bg:"controller-btn.png";
+@controller-hover:"controller-hover.png";
+.controller-team{
+	.icon(189px,45px,@controller-bg);
+	.marginT(36px);
+}
+.controller-team:hover{
+	.icon(189px,45px,@controller-hover);
+}
+
+//我的比赛悬浮框
+.suspend-match,.suspend-match-normal{
+	position: fixed;
+    .clearfix;	
+    top: 330px;
+}
+.suspend-match-normal{
+	right: 0;
+}
+.suspend-match-btn{
+	.marginT(40px);
+	img{
+		cursor: pointer;
+	}
+}
+.suspend-match>div{
+	.left;
+}
+.suspend-match-data{
+	.wh(310px,405px);
+	.task-box;
+	.text-align(center);
+	ul{
+		.marginL(15px);
+		.marginR(15px);
+		.marginB(22px);
+		.bg-color(#041923);
+		li{
+			height: 60px;
+			.paddL(12px);
+			.paddR(14px);
+			.left{
+				line-height: 20px;
+				.marginT(10px);
+				.text-align(left);
+			}
+			.right{
+				line-height: 60px;
+			    .font(12px);
+			}
+			.match-set-name{
+				.font(12px);
+				.display(block);
+			}
+			.match-set-small{
+				.font10;
+				.marginT(10px);
+			}
+			.diamonds-normal{
+			    .wh(16px,16px);
+			}
+		}
+	}
+}
+.suspend-match-data>img{
+	padding: 15px 0;
+}
+.fadeInLeft{
+	0%   {right: -341px;}
+	100% {right:0;}
+}
+@keyframes fadeInLeft{
+	.fadeInLeft;
+}
+@-moz-keyframes fadeInLeft{  /* Firefox */
+	.fadeInLeft;
+}
+@-webkit-keyframes fadeInLeft {/* Safari and Chrome */
+	.fadeInLeft;
+}
+@-o-keyframes fadeInLeft{/* Opera */
+	.fadeInLeft;
+}
+
+.suspend-match{
+	right: -341px;
+}
+.suspend-match-show{
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+}
+.animation{
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: .2s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 1s;
+    animation-delay: .2s;
+    animation-timing-function: ease;
+    animation-fill-mode: both;
+}
+/* .fadeInRight{
+	0%   {right: 0;}
+	100% {right:-341px;}
+}
+@keyframes fadeInRight{
+	.fadeInRight;
+}
+@-moz-keyframes fadeInRight{  Firefox
+	.fadeInRight;
+}
+@-webkit-keyframes fadeInRight {Safari and Chrome
+	.fadeInRight;
+}
+@-o-keyframes fadeInRight{Opera
+	.fadeInRight;
+}
+.suspend-match-hide{
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+} */
+

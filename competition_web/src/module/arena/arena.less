@@ -1,0 +1,453 @@
+@import './../common/variables.less';
+@hero-bg:"hero-bg.jpg";
+@dota-bg:"dota-bg.jpg";
+@king-bg:"king-bg.jpg";
+.hero-bg,.dota-bg,.king-bg{
+	height: 1162px;
+}
+.hero-bg{
+	.bg-img(@hero-bg);
+}
+.dota-bg{
+	.bg-img(@dota-bg);
+}
+.king-bg{
+	.bg-img(@king-bg);
+}
+.match-left{
+	width: 894px;
+	.left;
+}
+.carousel-match{
+	width: @percent100;
+	height: 390px;
+	.marginT(72px);
+	.marginB();
+}
+.match-right{
+    .right;
+    width: 324px;
+}
+.game-header(@url){
+	height: 70px;
+	background: url("@{base}@{url}") bottom no-repeat;
+	min-width: 1234px;
+}
+.game-header{
+	.marginT(50px);
+}
+.game-header .inner>div{
+    .left;
+    width: 60px;
+    .text-align();
+    .marginT(6px);
+    cursor: pointer;
+    .paddR(40px);
+}
+.game-header .inner>div:nth-child(1){
+    .marginL(-9px);
+}
+.game-header p{
+	.wh(25px,34px);
+	margin:0 auto;
+}
+.game-header span{
+	.color(#2f5465);
+	.font(12px);
+}
+.class-active span{
+	.color(#ffffff);
+}
+@challengeing:"challengeing.png";
+.challengeing-btn{
+    .enter-btn(@challengeing);
+}
+.flag-t-left{
+	.marginR(9px);
+	.marginL(35px);
+}
+@team-bg-big:"team-bg-big.png";
+.sports-team-detail{
+    .paddT(33px);
+    .icon(893px,235px,@team-bg-big);
+}
+@team-head:"team-head.png";
+.team-head{
+   .icon(96px,96px,@team-head);
+   .relative;
+   img{
+   	.wh(75px,75px);
+   	.radius(@percent100);
+   	.logo-box-position(11px,11px);
+   }
+   .marginT(-13px);
+   .marginL(28px);
+   .marginR(23px);
+}
+.colorb49656{
+	.color(#b49656);
+}
+.team-title-bar{
+	.marginB(4px);
+}
+.team-tit{
+	.font(20px);
+	.colorb49656;
+	.blod;
+}
+@lanunch-bg-big:"lanunch-bg-big.png";
+
+.c-number-blue{
+	.color(#08b2c9);
+}
+.launch-arena{
+	.relative;
+	.marginT(72px);
+	.icon(324px,318px,@lanunch-bg-big);
+	.text-align();
+	.number-img{
+		.marginT(40px);
+	}
+	.color-t{
+		.marginT(15px);
+	}
+	.color-grey{
+		.marginT(52px);
+	}
+	.append-btn{
+		.marginT(14px);
+		.marginL(55px);
+	}
+	.arena-number{
+		.logo-box-position(36px,150px);
+		.arena-num;
+	}
+	.reana-text-img{
+		.marginT();
+	}
+}
+.arena-num{
+	.c-number-blue;
+	.font(20px);
+	.blod;
+}
+.team-result>p{
+	line-height: 50px;
+	.marginT(-17px);
+    .font(16px);
+    .color-t;
+}
+.team-item{
+    .color-grey;
+    .marginR(16px);
+    .marginL(11px);
+}
+.marR16{
+	.marginR(16px);
+}
+.win-percent{
+	.font(20px);
+	.color-t;
+	img{
+		.vertical(middle);
+		.marginR(5px);
+	}
+}
+.result-history-detail{
+	.color(#deb360);
+	.marginT(130px);
+	.text-align(right);
+}
+
+.launch-arena .enter-btn,.launch-arena .challengeing-btn{
+	margin:25px auto;
+}
+.arena-bar{
+	.marginB(20px);
+	.marginT(72px);
+	height: 30px;
+	line-height: 30px;
+	.font(12px);
+	.home-bar{
+		width: 56px;
+		.bg-color(#1d303a);
+		.display(inline-block);
+		.center;
+		height: 100%;
+		img{
+			.marginT(5px);
+		}
+	}
+	.home-arrow{
+		.logo-box-position(0,0);
+	}
+	.second-menu-bar{
+		.bg-color(#0b222e);
+		.paddL(30px);
+		.paddR(15px);
+		.relative;
+	}
+}
+.arena-bar>div{
+	.left;
+	height: 30px;
+}
+//挑战记录css start
+.challenge-record ul{
+	.paddT(24px);
+	.paddB(34px);
+}
+.record-item>div{
+	.left;
+}
+.record-item{
+    height: 90px;
+    .marginB(12px);
+    background: url("@{base}@{include-bg}") repeat-y;
+}
+.column-score{
+    .font(22px);
+}
+.challenge-record .vs{
+	margin:32px 40px;
+}
+@head-border-challenge:"head-border-challenge.png";
+.head-border-chall{
+	.display(inline-block);
+   .icon(49px,49px,@head-border-challenge);
+   img{
+   	.wh(47px,47px);
+   	.radius(50%);
+   }
+}
+.head-border-challenge{
+    .head-border-chall;
+    margin:20px 0;
+}
+.challenge-record .column1{
+   .text-align(right);
+   .relative;
+}
+.challenge-record .column1,.challenge-record .column6,.challenge-record .column-score{ 
+    line-height: 90px;
+}
+.challengeer1{
+    .marginL(16px);
+	.marginR(22px);
+}
+.challengeer2{
+	.marginL(25px);
+	.marginR(15px);
+}
+.challenge-name{
+	.font(18px);
+	.blod;
+}
+.font13{
+	.font(13px);
+}
+.win{
+	.icon(19px,28px,@win);
+	margin:35px 11px;
+}
+.win-l{
+	.win;
+	.absolute;
+	left: 20px;
+}
+.vs{
+	.icon(40px,26px,@vs-icon);
+}
+//挑战记录css end
+
+//挑战过程css start
+.challenge-process{
+	.paddB(15px);
+}
+.challenge-team{
+	.marginL(32px);
+}
+.challenge-team>div{
+	.left;
+}
+@lineup-challenger-bg:"lineup-challenger-bg.png";
+@lineup-challenger-me-bg:"lineup-challenger-me-bg.png";
+@lineup-challenger-fail:"lineup-challenger-fail.png";
+.challenger-line{
+	.wh(300px,49px);
+	line-height: 49px;
+	.relative;
+	.marginT(38px);
+}
+.lineup-challenger{
+	.challenger-line;
+	.bg-img(@lineup-challenger-bg);
+	.text-align(right);
+}
+.challenger-center{
+	margin:38px 80px;
+}
+.lineup-challenger-me{
+	.challenger-line;
+	.bg-img(@lineup-challenger-me-bg);
+	.paddL(40px);
+}
+.lineup-challenger-fail{
+	.challenger-line;
+	.bg-img(@lineup-challenger-fail);
+	.paddL(40px);
+}
+.head-border-process1{
+    .head-border-chall;
+    .logo-box-position(0,275px);
+}
+.head-border-process2{
+    .head-border-chall;
+    .logo-box-position(0,-25px);
+}
+.porcess-list-data{
+	.paddR(30px);
+	.marginL(32px);
+	height: 370px;
+	overflow: auto;
+	.marginB(10px);
+	.relative;
+}
+.porcess-list-data .desc{
+	padding:15px;
+}
+.special-process{
+	.bg-color(#041923);
+}
+.porcess-list-data li{
+	min-height: 70px;
+	max-height: 82px;
+	.text-align(left);
+	p{
+		.font(16px);
+	}
+	span{
+		.font(12px);
+	}
+	.process-time{
+		.font(12px);
+	}
+	.process-name{
+		.color(#b49656);
+	}
+}
+.porcess-list-data li .desc{
+	width: 733px;
+	.marginL(25px);
+}
+@bar:"bar.png";
+.bar{
+	width: 8px;
+	height: 70px;
+    background: url("@{base}@{bar}") repeat-y;
+    .relative;
+    .marginL(6px);
+    img{
+    	.marginL(10px);
+    }
+    .new-icon{
+    	.icon(23px,23px,@new-icon);
+    	.logo-box-position(30px,-7px);
+    }
+}
+//挑战过程css end
+
+//挑战数据对比css start
+.challenge-data{
+	height: 295px;
+	ul{
+		.marginT(15px);
+	}
+}
+.challenge-data li{
+	margin: 33px 18px;
+	.relative;
+}
+.challenge-data li>div{
+	.left;
+}
+.challenge-data-process{
+	.bg-color(#041923);
+	.wh(110px,13px);
+	.display(inline-block);
+	.marginT(8px);
+	.relative;
+}
+.challenge-type{
+	.bg-color(#000);
+	border:2px solid #c09e66;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	.radius();
+	.display(inline-block);
+}
+@process-blue:"process-blue.jpg";
+.process-blue{
+	.absolute;
+	height: 13px;
+	top: 0;
+	right:0;
+    background: url("@{base}@{process-blue}") repeat-x;
+}
+@process-red:"process-red.jpg";
+.process-red{
+	height: 13px;
+	.logo-box-position(0,0);
+    background: url("@{base}@{process-red}") repeat-x;
+}
+.challenge-score-left{
+	.text-align(left);
+}
+.challenge-score-right{
+	.text-align(right);
+}
+.challenge-cen{
+	.wh(26px,13px);
+}
+.challenge-center{
+	.logo-box-position(0,129px);
+	z-index: 996;
+}
+.challenge-score-left,.challenge-score-right{
+	.marginT(8px);
+	width: 20px;
+	.font(12px);
+}
+//挑战数据对比css end
+
+//挑战结果css start
+@challenge-result-bg:"challenge-result-bg.png";
+.challenge-result-bg{
+   .icon(893px,397px,@challenge-result-bg);
+   .marginT();
+   .center;
+}
+.result-gold{
+	.font(20px);
+	.marginT(18px);
+	.marginB(40px);
+}
+.result-desc{
+	.font(16px);
+	span{
+		.marginR(8px);
+	}
+}
+.see-process-bar{
+	height: 40px;
+	line-height: 40px;
+	.bg-color(#041923);
+	.marginT();
+	.color(#cdbe91);
+	.center;
+	cursor: pointer;
+}
+//挑战结果css end
+
+

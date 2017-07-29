@@ -1,0 +1,99 @@
+@import './../common/variables.less';
+@rule-layer: "rule-layer.png";
+@newsdetail-bg : "newsdetail-bg.jpg";
+@rule-nav1 : "rule-nav1.png";
+@rule-nav-icon : "rule-nav-icon.png";
+@rule-btnto : "rule-btnto.jpg";
+@nav-link-current : "nav-link-current.png";
+@rule-item : "rule-item.png";
+.rule-bg(@url){
+	background: url("@{base}@{url}") center no-repeat;
+}
+.rule-bg2(@url){
+	background: url("@{base}@{url}") top no-repeat;
+}
+.rule-bg3(@url){
+	background: url("@{base}@{url}") left top no-repeat;
+}
+.rule-bg{
+	.rule-bg2(@newsdetail-bg);
+}
+.rule-box{
+	padding: 38px 56px 49px 45px;
+	margin-top: 65px;
+	.rule-bg(@rule-layer);
+	overflow: hidden;
+}
+.rule-top{
+	margin-bottom: 30px;
+    .title{
+    	font-size: 22px;
+    	font-weight: bold;
+    	color: #f8cd70;
+    }
+    .howtoplay-btn{
+    	display: inline-block;
+    	height: 30px;
+    	width: 123px;
+    	.rule-bg(@rule-btnto);
+    	float: right;
+    }
+}
+p{
+	font-size: 14px;
+}
+.rule-nav{
+	width: 239px;
+	text-align: center;
+	li{
+		height: 50px;
+		line-height: 50px;
+		color: #335563;
+		font-weight: bold;
+		.rule-bg(@rule-nav1);
+		cursor: pointer;
+		position: relative;
+		&:hover{
+			.rule-bg(@nav-link-current);	
+			color:#f8cd70; 		
+		};
+		i{
+			display: inline-block;
+			width: 14px;
+			height: 14px;
+			.rule-bg(@rule-nav-icon);
+			position: absolute;
+			top: 18px;
+			right: 70px;
+			z-index: 995;
+		}		
+	}
+	.on{
+		.rule-bg(@nav-link-current);
+		color: #f8cd70; 
+	}
+	p{
+		font-weight: bold;
+	}
+}
+.rule-detail{
+	width: 770px;
+	background-color: #021014;
+	padding: 45px 100px 30px 20px; 
+	li{
+		margin:13px 0 20px 0;
+		letter-spacing: 1px;
+		padding-left: 40px;
+		.rule-bg3(@rule-item);
+	}
+	h4{
+		font-size: 16px;
+
+	}
+	p{
+		margin: 10px 0 8px 0;
+	}
+	.color{
+		color: #08b2c9;
+	}
+}

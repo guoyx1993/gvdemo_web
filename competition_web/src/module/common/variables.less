@@ -1,0 +1,1440 @@
+@base:"./../../image/";
+@percent100:100%;
+@12px:12px;
+@icon-gold:"gold.png"; //金币图标
+@icon-stone:"stone.png"; //钻图标
+@game-btn1:"game-btn1.jpg";
+@game-btn2:"game-btn2.jpg";
+@game-btn3:"game-btn3.jpg";
+@game-btn3-hover:"game-btn3-hover.jpg";
+@game-btn4:"game-btn4.jpg";
+@game-btn4-hover:"game-btn4-hover.jpg";
+@game-btn5:"game-btn5.jpg";
+@game-btn6:"game-btn6.jpg";
+@include-bg:"include-bg.png";
+@new-icon:"new-icon.png";
+@win:"win.png";
+@color-money:#ff6c00;
+.borderradius{
+	border-radius: 50%;
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	-ms-border-radius:50%;
+	-o-border-radius:50%;
+}
+.boxsize{
+	box-sizing: border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+}
+.opcity(@op){
+    filter:alpha(opacity=@op);
+    -moz-opacity:@op;
+    -khtml-opacity: @op;
+    opacity: @op;
+}
+.font(@size:14px){
+    font-size:@size;
+}
+.font12{
+	.font(12px);
+}
+.font10{
+	.font12;
+    -webkit-transform:scale(0.8);
+    *font-size:10px;
+}
+.marginT(@px:20px){
+    margin-top: @px;
+}
+.marginR(@px:20px){
+    margin-right: @px;
+} 
+.marginL(@px:20px){
+    margin-left: @px;
+}  
+.marginB(@px:20px){
+    margin-bottom: @px;
+}
+.paddT(@px:20px){
+    padding-top: @px;
+} 
+.paddL(@px:20px){
+    padding-left: @px;
+} 
+.paddR(@px:20px){
+    padding-right: @px;
+} 
+.paddB(@px:20px){
+	padding-bottom: @px;
+}
+.vertical(@px){
+	vertical-align:@px;
+}
+.color(@color){
+	color: @color;
+}
+.bg-color(@color){
+	background-color:@color; 
+}
+.bg-img(@url){
+	background: url("@{base}@{url}") no-repeat;
+}
+.radius(@px:50%){
+	border-radius: @px;
+}
+.wh(@width,@height){
+	width: @width;
+    height: @height;
+}
+.icon(@width,@height,@url){
+	.wh(@width,@height);
+   .bg-img(@url);
+}
+.text-align(@direction:center){
+	text-align: @direction;
+}
+.center{
+	.text-align();
+}
+.absolute{
+	position: absolute;
+}
+.relative{
+	position: relative;
+}
+.blod{
+	font-weight: bold;
+}
+.float(@float:left){
+	float: @float;
+}
+.display(@display){
+	display: @display;
+}
+html,body{
+	min-width: 1234px;
+	min-height: 500px;
+	max-width: 1920px;
+	margin: 0 auto;
+	font-size: 14px;
+	color: #f0e6d2;
+	font-family: "Microsoft YaHei";
+}
+p,ul,li,h1,h2,h3,h4,h5,h6{
+	margin: 0;
+	padding: 0;
+}
+li{
+	list-style-type: none;
+}
+a{
+	color: #f0e6d2;
+	text-decoration: none;
+}
+img{
+	border:none;
+}
+.inner{
+	width: 1234px;
+	margin: 0 auto;
+}
+.clearfix:after{
+	display:block;
+	clear:both;
+	content:"";
+	visibility:hidden;
+	height:0
+ }
+.clearfix{zoom:1}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.moreDot{
+	text-overflow: ellipsis;
+    word-wrap: normal;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.triangle-down{
+	display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 8px solid #cdbe91;
+}
+
+//标题头部
+.box(@width,@height,@path){
+	.relative;
+	.icon(@width,@height,@path);
+	background-size: contain;
+}
+@tit-bg:"tit-bg.jpg";
+@tit-bg-big:"tit-bg-big.jpg";
+.tit-bg{
+	.box(324px,40px,"@{tit-bg}");
+	.tit-bg-public;
+}
+.tit-bg-big{
+	.box(894px,40px,"@{tit-bg-big}");
+	.tit-bg-public;
+}
+.tit-bg-public{
+	.marginT();
+	line-height: 40px;
+	.text-align(left);
+}
+.tit-chinese{
+    .font(16px);
+    .blod;
+	.paddL(48px);
+}
+.tit-eng{
+    .font(8px);
+    -webkit-transform:scale(0.8);
+    .paddL(8px);
+}
+.c-pei{
+    .color(#bcaf86);
+}
+.color-account{
+	color: #00d3ff;
+}
+.color-blue{
+	.color(#0a96aa);
+}
+.color-blue1{
+	.color(#08b2c9);
+}
+.color-red{
+	.color(#cb1f39);
+}
+.color-yellow{
+	.color(#cdbe91);
+}
+.task-box{
+    .bg-color(#04141c);
+}
+.match-special{
+	border:2px solid #404a4e;
+	padding:5px;
+	.marginT();
+	.relative;
+}
+.column1 .finish-tag{
+	.display(inline-block);
+	margin-bottom: 0;
+	margin-top: 0;
+}
+.finish-tag{
+	.font(12px);
+	*font-size:8px;
+	-webkit-transform:scale(0.66);
+	color: #000;
+	.bg-color(#b59758);
+	padding: 1px 10px;
+	.radius(10px);
+	line-height: 20px;
+	margin: 15px 0;
+}
+.tag-icon{
+	.display(inline-block);
+	.vertical(-7px);
+	.marginR(18px);
+	.icon(23px,23px,@new-icon);
+}
+.logo-box-position(@top,@left){
+   .absolute;
+    top: @top;
+    left: @left;
+}
+.speical-info{
+	.logo-box-position(30px,20px);
+	.text-align(left);
+}
+.match-special img{
+	width: 310px;
+	height: 156px;
+}
+.bet-guess-form{
+	.marginL(44px);
+	.marginB(18px);
+	.relative;
+}
+.input-unit{
+	.logo-box-position(4px,531px);
+	line-height: 44px;
+	.center;
+	.wh(58px,44px);
+	.bg-color(#091e26);
+	.display(inline-block);
+	.font(16px);
+	.blod;
+	cursor: pointer;
+}
+.bet-input{
+	.paddL(30px);
+	.color(#ffffff);
+}
+.speical-tit{
+	.font(18px);
+	.blod;
+	.marginB(7px);
+}
+.speical-tit-small{
+	.font(@12px);
+}
+@go-btn-white:"go-btn-white.png";
+.go-btn-white{
+	.logo-box-position(60px,0);
+	.icon(76px,22px,@go-btn-white);
+	cursor: pointer;
+}
+@star:"star.png";
+.star{
+	.bg-img(@star);
+	.star-text;
+	margin:7px 20px;
+}
+.star-text{
+	width: 40px;
+	height: 40px;
+	margin:17px 20px;
+}
+.game-name{
+	.blod;
+	.color(#f0e6d2);
+	.marginT(10px);
+	.marginR(10px);
+}
+@game-k:"game-k.png";
+.game-icon(@url){
+    .icon(35px,35px,@url);
+}
+.game-k{
+    .game-icon("@{game-k}");
+}
+@vs-icon:"vs-icon.png";
+.vs-icon{
+    .icon(40px,26px,@vs-icon);
+    .marginB(7px);
+    .marginT(5px);
+    .marginL();
+}
+@game-we:"we.png";
+@game-we-gray:"we-gray.png";
+.game-we{
+    .game-icon("@{game-we}");
+}
+.game-we-gray{
+    .game-icon("@{game-we-gray}");
+}
+@game-t:"game-t.png";
+.game-t{
+	.font10;
+	color: #636d72;
+	.marginT(10px);
+	.marginB(21px);
+}
+.column-p .game-t,.column4 .game-t{
+	background: url("@{base}@{game-t}") left no-repeat;
+	.paddL(18px);
+	.marginL(4px);
+}
+.column1{
+	.marginL();
+	width: 220px;
+	.text-align(left);
+}
+.column4{
+	margin:0 47px;
+}
+.column6{
+    .marginL(25px);
+}
+@process-bg:"process-bg.png";
+@process-bg-hover:"process-bg-hover.png";
+.process-btn{
+	.icon(222px,45px,@process-bg);
+	margin: 20px auto;
+	.center;
+	img{
+		margin:13px 0;
+	}
+}
+.process-btn:hover{
+	.bg-img(@process-bg-hover)
+}
+@footer-bg:"footer-bg.png";
+.footer{
+  background: url("@{base}@{footer-bg}") center no-repeat;
+  width: @percent100;
+  height: 635px;
+  .relative;
+}
+@rank-flag2:"rank-flag2.png";
+.rank-flag2{
+	background: url("@{base}@{rank-flag2}") bottom no-repeat;
+}
+@rank-flag1:"rank-flag1.png";
+.rank-flag1{
+	background: url("@{base}@{rank-flag1}") bottom no-repeat;
+}
+.game-btn(@url){
+    .icon(123px,30px,@url);
+    line-height: 30px;
+    float: right!important;
+    .marginR(35px);
+    .color(#cdbe91);
+    .font(@12px);
+    cursor: pointer;
+    .text-align(center);
+    .marginT(13px);
+}
+.game-btn1{
+	.game-btn("@{game-btn1}");
+	color: #8f8f8f;
+}
+.game-btn2{
+	.game-btn("@{game-btn2}");
+}
+.game-btn3{
+	.game-btn("@{game-btn3}");
+}
+.game-btn3:hover{
+	.bg-img("@{game-btn3-hover}");
+}
+.game-btn4{
+	.game-btn("@{game-btn4}");
+}
+.game-btn4:hover{
+	.bg-img("@{game-btn4-hover}");
+}
+.game-btn5{
+	.game-btn("@{game-btn5}");
+}
+.game-btn6{
+	.game-btn("@{game-btn6}");
+}
+@open:"open.png";
+@cancel:"cancel.png";
+.icon-open{
+	.bg-img(@open);
+}
+.icon-cancel{
+	.bg-img(@cancel);
+}
+.icon-open,.icon-cancel{
+	.vertical(-1px);
+	.marginL(3px);
+	.wh(11px,11px);
+	.display(inline-block);
+}
+.gold-icon(@url,@width:15px,@height:15px){
+	.display(inline-block);
+	.vertical(-3px);
+	margin: 0 3px;
+	.icon(@width,@height,@url);
+	background-size: contain;
+}
+.color-t{
+	.color(#f0e6d2);
+}
+@s-normal:"s-normal.png";
+@s-selected:"s-selected.png";
+.icon-select,.icon-selected{
+	.marginL(13px);
+	.vertical(-4px);
+}
+.icon-select{
+	.gold-icon(@s-normal);
+}
+.icon-selected{
+	.gold-icon(@s-selected);
+}
+.icon-stone{
+	.gold-icon(@icon-stone);
+}
+@icon-s:"icon-s.png";
+.icon-s{
+	.gold-icon(@icon-s);
+	.marginR(6px);
+}
+@load-more:"load-more.png";
+.load-more{
+	.font(10px);
+	color: #636d72;
+	.marginT(15px);
+	height: 37px;
+	line-height: 37px;
+	.bg-img(@load-more);
+	cursor: pointer;
+	.text-align();
+}
+@game-item-hover:"game-item-hover.png";
+.home .game-item .game-item-parent:hover,.guess .game-item .clearfix:hover,.sports .game-item .clearfix:hover,.lineup-person-list .p-item:hover,.m-list li:hover{
+	.bg-img(@game-item-hover);
+	z-index: 999;
+	background-size: contain;
+}
+.home li:nth-child(odd),.ranking-list li:nth-child(odd){
+	.bg-color(#041923);
+}
+
+.home .game-item{
+	.relative;
+	.display(block);
+}
+.home .game-item>div>div{
+	.float();
+}
+.home .game-item>div.game-item-parent{
+	.paddT(8px);
+	.paddB(7px);
+}
+//轮播按钮样式
+.carousel .swiper-pagination,.carousel-match .swiper-pagination{
+    .text-align(right);
+    right: 18px;
+    left: auto!important;
+}
+.carousel .swiper-pagination-bullet,.carousel-match .swiper-pagination-bullet{
+	.wh(63px,2px);
+	.bg-color(#b59758);
+	.radius(0);
+}
+.swiper-button-prev, .swiper-button-next{
+	width: 22px!important;
+	height: 30px!important;
+	top: 46%!important;
+}
+@prev:"prev.png";
+@prev-active:"prev-active.png";
+.swiper-button-prev{
+	.swiper-bg-img(@prev);
+}
+.swiper-bg-img(@url){
+	background: url("@{base}@{url}") no-repeat!important;
+}
+@next:"next.png";
+@next-active:"next-active.png";
+.swiper-button-next{
+	.swiper-bg-img(@next);
+}
+.swiper-button-prev:hover{
+	.bg-img(@prev-active);
+}
+.swiper-button-next:hover{
+	.bg-img(@next-active);
+}  
+.enter-btn(@url){
+    .icon(210px,72px,@url);
+    line-height: 72px;
+    .font(24px);
+    .blod;
+    .color(#493115);
+    .marginT(10px);
+    .text-align(center);
+}
+@append-btn:"append.jpg";
+.append-btn{
+	cursor: pointer;
+	.enter-btn(@append-btn);
+}
+@append-btn-hover:"append-hover.jpg";
+.append-btn:hover{
+	.bg-img(@append-btn-hover);
+}
+@enter:"enter.jpg";
+.enter-btn{
+    .enter-btn(@enter);
+    cursor: pointer;
+}
+@enter-btn-hover:"enter-hover.jpg";
+.enter-btn:hover{
+	.bg-img(@enter-btn-hover);
+}
+@more-right:"more-right.png";
+.more-right{
+	.display(inline-block);
+	.icon(17px,13px,@more-right);
+}
+//list
+@tag:"tag.jpg";
+.tag{
+	.bg-img(@tag);
+	.tag-hide;
+	.marginT(2px);
+}
+.tag-hide{
+	.wh(21px,21px);
+	.marginL(4px);	
+} 
+.color-grey{
+	.color(#636d72);
+}
+.c-gold{
+	color: @color-money;
+	.font(@12px);
+	.marginL(5px);
+	.display(inline-block);
+	width: 40px;
+	.text-align(right);
+}
+.gold-all{
+    .font10;
+    .color(#cdbe91);
+}
+.c-num-blue{
+    .color(#1c8bea);
+}
+.c-num-red{
+    .color(#e94715);
+}
+.diamonds(@width,@height,@ver:-4px){
+	.display(inline-block);
+    .vertical(@ver);
+	.icon(@width,@height,@icon-stone);
+	background-size: contain;
+}
+.diamonds-enter{
+    .diamonds(28px,24px);
+}
+.diamonds-first{
+	.diamonds(26px,22px);
+	.marginL(3px);
+}
+.diamonds-normal{
+	.diamonds(20px,18px);
+	.marginL(3px);
+}
+.flag-select{
+    .right;
+    .color(#cdbe91);
+    .font(@12px);
+}
+.self-select{
+	.display(inline-block);
+	height: 22px;
+	line-height: 22px;
+	.bg-color(#13252f);
+	padding: 0 15px;
+	.radius(10px);
+}
+@head-border:"head-border.png";
+.head-border{
+	.display(inline-block);
+    .icon(40px,40px,@head-border);
+    .marginR(22px);
+    .vertical(-11px);
+    img{
+    	.wh(36px,36px);
+    	.radius();
+    	.marginL(2px);
+    	.marginT(2px);
+    }
+}
+//遮罩层css
+.mask-box{
+	.wh(@percent100,@percent100);
+	.bg-color(#000000);
+	opacity: 0.7;
+	z-index: 998;
+	position: fixed;
+    top: 0;
+}
+@close-btn:"close-btn.png";
+.close{
+	.icon(60px,60px,@close-btn);
+	.absolute;
+	cursor: pointer;
+}
+@close-hover:"close-hover.png";
+.close:hover{
+    .bg-img(@close-hover);
+}
+
+.guess-bet{
+	.bg-color(#0d242f);
+}
+.guess-bet>li:nth-child(odd){
+	.bg-color(#081e29);
+}
+.guess-bet>li{
+    height: 54px;
+    .marginB(2px); //解决火狐下注显示后不兼容问题(列布局错位)
+}
+.guess-bet>li>div{
+	.left;
+}
+.guess-bet .column4{
+    line-height: 54px;
+    margin:0 37px;
+}
+.guess-bet .game-small{
+	.font(12px);
+    *font-size: 10px;
+    -webkit-transform: scale(.83);
+    .color-grey;
+}
+.guess-bet .column1{
+	margin: 8px 0 8px 47px;
+	.wh(300px,38px)
+}
+.guess-bet .column2,.guess-bet .column6{
+    margin:10px 0;
+    .c-pei,.c-num-blue,.c-num-red{
+       .font(12px);
+    }
+}
+.guess-bet .star{
+	.marginL(47px);
+}
+@bet-btn-finish:"bet-btn-finish.jpg";
+@bet-btn-append:"bet-btn-append.jpg";
+@bet-btn-bet:"bet-btn-bet.jpg";
+@bet-btn-append-hover:"bet-btn-append-hover.jpg";
+@bet-btn-bet-hover:"bet-btn-bet-hover.jpg";
+.bet-btn(@url){
+    .icon(123px,30px,@url);
+    float: right!important;
+    .marginR(35px);
+    .marginT(11px);
+}
+.bet-btn-finish{
+   .bet-btn(@bet-btn-finish);
+   cursor: pointer;
+}
+.bet-btn-append{
+   .bet-btn(@bet-btn-append);
+   cursor: pointer;
+}
+.bet-btn-bet{
+   .bet-btn(@bet-btn-bet);
+}
+.bet-btn-append:hover{
+	.bet-btn(@bet-btn-append-hover);
+}
+.bet-btn-bet:hover{
+	.bet-btn(@bet-btn-bet-hover);
+}
+.state-finish,.state-bet{
+	line-height: 50px;
+	float: right!important;
+	.marginR(78px);
+	.blod;
+}
+.state-finish{
+	.color(#636d72);
+}
+.state-bet{
+    .color(#00d3ff);
+    cursor: pointer;
+}
+
+//比赛阵容css start
+@lineup-bg:"lineup-bg.png";
+.lineup-number{
+	background: url("@{base}@{lineup-bg}") repeat-y;
+    height: 66px;
+    .marginT(52px);
+}
+.lineup-number img{
+    padding: 20px 0 20px 36px;
+}
+.lineup-summary{
+    padding: 40px 0 40px 36px;
+    .blod;
+}
+.summary-money{
+	.marginT(29px);
+	.marginB(38px);
+}
+.lineup-summary p span:nth-child(2){
+	margin: 0 8px;
+}
+@fight-icon:"fight-icon.png";
+.fight-icon{
+	.display(inline-block);
+    .icon(17px,15px,@fight-icon);
+    .vertical(-3px);
+}
+@summary-icon:"summary-icon.png";
+.summary-icon{
+    .display(inline-block);
+    .icon(17px,15px,@summary-icon);
+    .vertical(-3px);
+}
+.lineup-person{
+	.marginT(64px);
+}
+@lineup-person-bg:"lineup-person-bg.png";
+.lineup-person>div{
+    .left;
+    .text-align(center);
+}
+.lineup-person-bg{
+	.icon(87px,130px,@lineup-person-bg);
+	.relative;
+}
+.lineup-person-name{
+	.display(inline-block);
+	.paddT(11px);
+	.color(#ad9862);
+}
+.lineup-person-bg>img{
+    .wh(80px,80px);
+    .radius();
+}
+.lineup-person .line-dot-active{
+    width: 52px;
+    letter-spacing: 2px;
+    .marginT(134px);
+}
+@lineup-person-icon:"lineup-person-icon.png";
+.person-tag{
+	.display(inline-block);
+    .icon(26px,27px,@lineup-person-icon);
+    .logo-box-position(1px,69px);
+    img{
+    	.marginT(6px); 
+        .marginL(3px);
+    }
+}
+.lineup-result{
+	.marginT(59px);
+	.display(flex);
+	width: 636px
+}
+.lineup-result>div{
+	width: 212px;
+}
+.lineup-result .lineup-c{
+    .text-align(center);
+}
+.lineup-result .lineup-r{
+    .text-align(right);
+}
+.state-line-score{
+	.marginT(5px);
+}
+
+@state-line-active:"state-line-active.png";
+@state-line:"state-line.png";
+.state-line(@url){
+    .display(inline-block);
+    .icon(34px,34px,@url);
+    .vertical(-12px);
+    margin: 0 9px;
+}
+.state-line-active{
+	.state-line(@state-line-active);
+}
+.state-line{
+	.state-line(@state-line);
+}
+.line-dot{
+    height: 133px;
+    line-height: 133px;
+    letter-spacing: 2px;
+}
+.line-dot-active{
+	.color(#bcaf86);
+}
+//比赛阵容css end
+
+//报名挑战列表css start
+.sign-list{
+	padding:26px 16px 33px 16px;
+}
+@sign-head:"sign-head.png";
+.sign-list>div{
+	.left;
+    .marginL(-4px);
+}
+.sign-box{
+    .icon(28px,28px,@sign-head);
+    background-size:contain;
+    img{
+    	.wh(25px,25px);
+    	.radius();
+    }
+}
+.sign-number{
+	.wh(28px,28px);
+	line-height: 28px;
+	.text-align(center);
+	.color(#04141c);
+	.font(12px);
+	background-color:#bf9f66!important; 
+	.radius();
+}
+//报名挑战列表css end
+
+//下拉框css start
+.select{
+	cursor: pointer;
+	.display(inline-block);
+	.wh(104px,26px);
+	.center;
+	line-height: 26px;
+	.bg-color(#12252f);
+	.marginL(8px);
+	.color-yellow;
+	img{
+		.vertical(-2px);
+		.marginL(4px);
+	}
+}
+.select-normal{
+	.radius(10px);
+}
+.select-open{
+	border-top-left-radius:10px;
+    border-top-right-radius:10px;
+}
+.select-content{
+	.bg-color(#12252f);
+	.center;
+}
+.select-content li{
+	height: 26px!important;
+	line-height: 26px!important;
+	.font(12px);
+	.color-grey;
+	border-bottom:1px solid #041923;
+	cursor: pointer;
+}
+.select-content,.select-content li:nth-last-child(1){
+	border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
+}
+.select-content li:hover{
+	.bg-color(#1d3440);
+}
+.option{
+	.bg-color(#1d3440);
+}
+//下拉框css end
+
+
+//header start
+@header-bottom:"header-bottom.png";
+.header{
+    height: 100px;
+    background: url("@{base}@{header-bottom}") center no-repeat;
+}
+
+@header-fixed:"header-fixed.png";
+.header-fixed{
+	position: fixed;
+	z-index: 997;
+	width: @percent100;
+    background: url("@{base}@{header-fixed}") center no-repeat;
+    top: 0;
+    min-width: 1234px;
+    height: 72px
+}
+@logo:"logo.png";
+.header-logo{
+    width: 171px;
+    height: 100px;
+    margin:0 40px 0 46px; 
+    .bg-img(@logo);
+}
+@logo-fixed:"logo-fixed.png";
+.header-logo-fixed{
+    width: 115px;
+    height: 50px;
+    margin:0 40px 0 5px; 
+    .bg-img(@logo-fixed);
+}
+.header-nav-fixed li{
+	padding:17px 0!important;
+}
+.header-nav li{
+    .color(#ffffff);
+    .float();
+    margin: 0 38px;
+    cursor: pointer;
+    padding: 20px 0;
+}
+.l-title{
+    .blod;
+    .center;
+}
+.l-title-fixed{
+	.font(@12px);
+}
+.s-title{
+	//处理字体小于12chrome兼容问题
+    .marginT(6px);
+    .font(12px);
+	-webkit-transform : scale(0.5);
+	*font-size:6px;
+}
+@nav-bg:"nav-bg.png";
+.header-nav-bg{
+    background: url("@{base}@{nav-bg}") 20px bottom no-repeat;
+    height: 79px;
+}
+.header-head{
+	margin: 16px 0;
+	line-height: 47px;;
+}
+.header-head-fixed{
+	line-height: 31px;
+	margin:9px 0;
+}
+@head-bg:"head-bg.png";
+.head-bg(@width,@height){
+	.display(inline-block);
+	width: @width;
+	height: @height;
+	padding: 5px;
+	.boxsize;
+	text-align: center;
+	.bg-img(@head-bg);
+	.marginR(14px);
+	.float();
+	.borderradius;
+	overflow: hidden;
+	img{
+		width: @percent100;
+	    height: @percent100;
+	}
+}
+.head-bg-fixed img{
+	width: @percent100;
+	height: @percent100;
+}
+.head-bg{
+	.head-bg(47px,47px);
+}
+.head-bg-fixed{
+    .head-bg(30px,30px);
+    background-size: contain;
+}
+.arrow-down{
+	margin:0 10px;
+	cursor: pointer;
+}
+.account-news{
+	cursor: pointer;
+	position: relative;
+	i{
+		display: inline-block;
+		border:5px solid #900;
+		.borderradius;
+		position: absolute;
+		top: -5px;
+		right: -5px;
+	}
+}
+//后部下拉
+.header-head-right{
+	position: relative;
+}
+@head-bg-big:"head-bg-big.png";
+@login-head1:"login-head1.png";
+@login-head2:"login-head2.png";
+
+.account-down-layer{
+	width: 327px;
+	height: 255px;
+    color: #051924;
+    background-color:rgba(21,23,28,.7);
+    position: absolute;
+    top: 68px;
+    right: 0;
+    .account-down{
+    	margin-left:29px;
+    }
+    .top{
+    	position: relative;
+    	margin-top: 14px;
+    	overflow: hidden;
+    }
+    .user-info{
+    	color: #2f5465;
+    	text-decoration: underline;
+    }
+    .color{
+    	color: #00d3ff;
+    	font-size: 16px;
+    }
+    .head-bg{
+    	width: 72px;
+    	height: 72px;
+    	padding: 8px;
+    	background: url("@{base}@{head-bg-big}") center no-repeat;
+    }
+    .name{
+    	p{
+    		line-height: 14px;
+    		margin-top: 13px;
+    	}
+    }
+    .btn-out{
+    	font-size: 14px;
+    	color: #626d71;
+    	position: absolute;
+    	top: 13px;
+    	right: 14px;
+    	line-height: 16px;
+    	text-decoration: underline;
+    	cursor: pointer;
+    	&:hover{
+    		color:#00d3ff;
+    	};
+    }
+    .money{
+    	color: #f0e6d2;
+    	margin-top: 30px;
+    	span{
+    		display: inline-block;
+    	}
+    	.img{
+    		width: 30px;
+    		height: 30px;
+    		margin-left: 20px;
+    	}
+    	img{
+    		width: 100%;
+    	}
+    	.num{
+    		margin: 0 14px;
+    		position: relative;
+    		top: -10px;
+    		left: 0;
+    	}
+
+    }
+    .btngo{
+    	text-align: center;
+    	width: 266px;
+    	height: 30px;
+    	line-height: 30px;
+    	text-align: center;
+    	margin-top: 13px;
+    	background: url("@{base}@{login-head1}") no-repeat center;
+        cursor: pointer;
+        &:hover{
+        	background:url("@{base}@{login-head2}") no-repeat center;
+        };
+    }
+    .gotouser{
+    	color: #f0e6d2;
+    	text-align: center;
+    	width: 100%;
+    	height: 35px;
+    	line-height: 35px;
+    	background-color: rgba(0,0,0,1);
+        margin-top: 11px;
+    }
+}
+.account-down-layeron{
+	top: 40px;
+}
+//header end
+
+//提示弹框css start
+@confirm-box:"confirm-box.png";
+@login-set2:"login-set2.png";
+@deposit-bg1:"deposit-bg1.png";
+@deposit-bg2:"deposit-bg2.png"; 
+@pay-bg1:"pay-bg1.png";  
+@pay-bg2:"pay-bg2.png";
+.confirm-box{
+   .icon(567px,280px,@confirm-box);
+    z-index: 999;
+	.marginL(-283px);
+	.marginT(-140PX);
+	top: 50%;
+	left: 50%;
+	position: fixed;
+}
+.deposit-confirm{
+	.bg-img(@deposit-bg1);
+}
+.deposit-confirm2{
+	.bg-img(@deposit-bg2);
+}
+.pay-confirm{
+	.bg-img(@pay-bg1);
+}
+.pay-confirm2{
+	.bg-img(@pay-bg1);
+}
+.login-confirm{
+   .icon(536px,260px,@login-set2);
+}
+.confirm-box>.relative{
+    .paddT(38px);
+}
+.confirm-box .close{
+	top: -10px;
+	right: -10px;
+}
+.confirm-info{
+	.center;
+	.font(16px);
+	.blod;
+	.marginT(85px);
+}
+.wechat-head{
+	.wh(22px,22px);
+	.radius();
+	.marginL(3px);
+	.marginR(3px);
+}
+//提示弹框css end
+
+//提现相关提示框 stard
+@deposit-bg11:"deposit-bg11.png";
+@deposit5:"deposit5.png";
+@deposit2:"deposit2.png";
+.deposit-toalipay{ 
+	width: 424px;
+	height: 389px;
+    background: url("@{base}@{deposit-bg11}") no-repeat;
+    .close{
+    	top:-28px;
+    	right: -35px;
+    }
+    .box{
+    	width: 368px;
+    	margin:0 auto;
+    }
+    span{
+    	display: inline-block;
+    }
+    .color{
+    	color: #deb360;
+    	font-size: 12px;
+    }
+    .tomoney{
+    	color: #08b2c9;
+    	font-size: 14px;
+    	font-weight: bold;
+    }
+    .money{
+    	font-size: 12px;
+    	color: #ff6c00;
+    }
+    .icon{
+    	width: 30px;
+    	height: 30px;
+    }
+    em{
+    	font-style: normal;
+    }
+    .alerynum{
+    	margin:58px 0 20px 0;
+    }
+    .form-input{
+    	height: 52px;
+    	line-height: 52px;
+    	width: 368px;
+    	margin:0 auto;
+    	text-align: center;
+    	position: relative;
+    	z-index: 9999;
+    	background: url("@{base}@{deposit5}") no-repeat;
+    }
+    input{
+    	background-color: transparent;
+	    font-size: 14px;
+	    border: none;
+	    outline: none;
+	    padding-left: 10px;
+	    color: #636d72;
+	    width: 90%;
+    }
+    .rule{
+    	color: #636d72;
+    	margin-top: 22px;
+    	p{
+    		font-size: 12px;
+    		margin-top: 4px;
+    	}
+    }
+
+}
+.deposit-toalipay{
+	height: 474px;
+    background: url("@{base}@{deposit2}") no-repeat;
+    .box{
+    	margin-top: 70px;
+    }
+    .form-input{
+    	margin: 20px 0;
+    }
+    .form-code{
+    	position: relative;
+    }
+    .code{
+    	display: inline-block;
+    	font-size: 16px;
+    	height: 44px;
+    	line-height: 44px;
+    	padding:0 20px;
+    	position: absolute;
+    	top: 4px;
+    	right: 4px;
+    	background-color: #091e26;
+    	cursor: pointer;
+    }
+    .bind-p{
+    	font-style: 14px;
+    	font-style: bold;
+    }
+}
+//提现 end
+
+//充值 start
+@pay2 : "pay2.png";
+@pay9 : "pay9.png";
+@pay10 : "pay10.png";
+@pay12 : "pay12.png";
+@pay13 : "pay13.png";  //钻石充值
+@pay19 : "pay19.png";
+@pay22 : "pay22.png";
+@pay25 : "pay25.jpg";
+@pay17 : "pay17.png";
+@pay16 : "pay16.jpg";
+@pay18 : "pay18.png"; //扫码支付
+.codetopay{
+	width: 424px;
+	height: 616px;
+	background:url("@{base}@{pay18}") no-repeat;
+	.img{
+		width: 241px;
+		height: 241px;
+		margin:0 auto;
+		margin-top: 98px;
+		img{
+			width: 100%;
+		}
+	}
+	.payend{
+	    width: 222px;
+	    height: 45px;
+	    margin: 0 auto;
+	    text-align: center;
+     	background: url("@{base}@{pay19}") no-repeat;
+     	margin-bottom: 32px;
+     	margin-top: 50px;
+     	img{
+     		margin-top: 13px;
+     	}
+		&:hover{
+     		background: url("@{base}@{pay22}");
+		};
+	}
+}
+//钻石充值
+
+.diamondpay{
+	width: 491px;
+	height: 799px;
+	background:url("@{base}@{pay13}") no-repeat; 
+	top:30%;
+	.box{
+		width: 384px;
+		margin:0 auto;
+	}
+	.pay-way{
+		margin-top: 90px;
+		position: relative;
+		span{
+			display: inline-block;
+			margin-right:22px;
+		}
+		.pay{
+			cursor: pointer;
+            width: 101px;
+            height: 30px;			
+		}
+		.text{
+			position: relative;
+			top: -6px;
+			left: 0;
+		}
+		.alipay{
+			background:url("@{base}@{pay25}") no-repeat;
+			&:hover{
+			    background:url("@{base}@{pay12}") no-repeat;				
+			};
+		}
+		.wechat{
+			background:url("@{base}@{pay9}") no-repeat;
+			&:hover{
+     			background:url("@{base}@{pay10}") no-repeat;
+			};
+		}
+	} 
+	.text{
+		font-size: 16px;
+		font-weight: bold;
+	} 
+	.changemoney{
+		margin-top: 40px;
+		p{
+			margin-bottom:28px;
+		}
+		.newer{
+			margin-bottom: 22px;
+			text-align: center;
+			&:hover{
+				background:url("@{base}@{pay2}") no-repeat;
+			};
+		}
+		.at{
+			background:url("@{base}@{pay2}") no-repeat;			
+		}
+	}
+	.special{
+		display: none;
+	}
+	ul{
+		text-align: center;
+	}
+	li{
+		display: inline-block;
+		width: 124px;
+		height: 82px;
+		line-height: 82px;
+		text-align: center;
+		margin:2px 0;
+		&:hover{
+			background:url("@{base}@{pay17}") no-repeat;
+		};
+	}
+	.on{
+        background:url("@{base}@{pay17}") no-repeat;		
+	}
+	.form-input{
+		width: 376px;
+		height: 52px;
+		line-height: 52px;
+		margin-top: 35px;
+		background: url("@{base}@{pay16}");
+		input{
+		    font-size: 14px;
+		    border: none;
+		    outline: none;
+		    padding-left: 20px;
+		    color: #636d72;
+		    background-color: transparent;
+		    margin-right:15px;
+		}
+	}
+}
