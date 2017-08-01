@@ -11,11 +11,12 @@ Vue.use(VueAwesomeSwiper)
 //http请求
 import axios from 'axios'
 //默认值配置
-axios.defaults.baseURL = 'https://api.91war.com';
-//axios.defaults.baseURL = 'http://192.168.5.184:8019';
-if(localStorage.t){
-	axios.defaults.headers.common['Authorization'] = localStorage.t;
-}
+//axios.defaults.baseURL = 'https://api.91war.com';
+axios.defaults.baseURL = 'http://api.15war.com/';
+//axios.defaults.baseURL = 'http://192.168.5.151:81';
+// 本地储存为空或者存在的时候
+console.log("---------"+localStorage.t);
+
 //axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 // 关键在这里，设置afterEach钩子函数

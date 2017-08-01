@@ -45,18 +45,18 @@
 		    		<!--登陆后的名字-->
 		    		<span v-if="this.$store.state.user.nickname" class="color-account" :class="{'font-account':headerFixed}" v-text="this.$store.state.user.nickname">登陆后的名字</span>
 		    		<!--没登陆状态下的默认名字-->
-		    		<span class="color-account" :class="{'font-account':headerFixed}" style="color:#f0e6d2 ">您好，欢迎
+		    		<span  v-if="!this.$store.state.user.nickname" class="color-account" :class="{'font-account':headerFixed}" style="color:#f0e6d2 ">您好，欢迎
 		    		    <router-link to="/login" style="color: #00d3ff">登陆</router-link>
 		    		</span>
 		    		<!--点击展示 下拉-->
-		    		<span class="arrow-down" @click="toggleDown">
+		    		<span class="arrow-down" v-if="this.$store.state.user.nickname" @click="toggleDown">
 		    		    <img v-if="isShowDown" src="./../image/arrow-down.png">
 		    		    <img v-if="!isShowDown" src="./../image/arrow-up.png">		    		    
 		    		</span>
 		    		<!--消息-->
-		    		<span class="account-news">
+		    		<span class="account-news" v-if="this.$store.state.user.nickname">
 		    		    <img src="./../image/head-news.png" alt="">
-		    		    <i></i>
+		    		    <i v-if="this.$store.state.user.count > 0"></i>
 		    		</span>
 		    		<!--下拉层-->
 		    		<div class="account-down-layer" v-if="isShowDown">
@@ -69,12 +69,13 @@
 		    		            </div>
 		    		            <!--名字-->
 		    		            <div class="name left">
-                                    <p class="color">大炮炉dsad石</p>
+                                    <p class="color" v-text="this.$store.state.user.nickname"></p>
                                     <p class="" @click="toggleDown"><router-link to="/user-info" class='user-info'>编辑资料</router-link></p>
 		    		            </div>
-		    		            <span class="btn-out">退出</span>
+		    		            <!-- <span class="btn-out">退出</span> -->
+		    		            <span class="btn-out" @click="loginOut">退出</span>
 		    		        </div>
-		    		        <div class="money">
+		    		        <div class="money"> 
 		    		            <span class="img"><img src="./../image/gold.png" alt=""></span>		    		      
 		    		            <span class="num">0</span>
 		    		            <span class="img"><img src="./../image/stone.png" alt=""></span>		    	      
@@ -104,16 +105,24 @@
 			return{
 				isShowClass:false,
 				headerFixed:false,
-				isShowDown:false   //是否展示下拉层
+				isShowDown:false,   //是否展示下拉层
+				successInfo : "获取成功",
+				user:''
 			}
 		},
 		props:['headerFix'],//是否使用固定header(父组件传递回来的参数)
+		computed:{
+			// user(){
+			// 	return this.$store.state.user;
+			// },
+		},
 		mounted:function(){
 			this.headerFixed = this.headerFix === 'true'; //返回来的字符串转为boolean类型
 			//是否使用固定滚动条事件
             if(!this.headerFixed){
                 window.addEventListener('scroll', this.handleScroll);	 
             }
+
 		},
 		methods:{
 			toggleClass:function(bool){
@@ -125,7 +134,23 @@
 			toggleDown:function(){
 				this.isShowDown = !this.isShowDown;
 				console.log(this.isShowDow);
-			}
+			},
+            //登录后获取用户信息
+            // getUserInfo : function(){
+            //     this.$http.get("api/user/userinfo").then(function(resule){
+            //     	if (resule.data.info == this.successInfo) {
+            //             this.$store.state.user = respose.data.data;
+            //             //this.user = respose.data.data;
+            //     	}
+            //     }).catch();
+            // },
+            //退出登录
+            loginOut : function(){
+            	//清除缓存和user信息,http头看login页
+            	window.localStorage.t = '';
+            	this.$store.state.user = '';
+            	location.href = "/#/login";
+            }            
 		}
 	}
 </script>

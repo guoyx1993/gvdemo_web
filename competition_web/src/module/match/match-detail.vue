@@ -5,9 +5,13 @@
 	    <div class="controller-match">
 	    	<div class="match-bar">
 	    		<div class="inner clearfix">
+	    		    <!--报名-->
 	    			<div v-if="state==1" class="enter-btn left" @click="changeState(2)">20 <span class="diamonds-enter"></span>加入</div>
+	    			<!--布阵-->
 	    			<div v-if="state==2" class="append-btn left">追加1<span class="diamonds-enter"></span></div>
+	    			<!--等待比赛-->
 	    			<div v-if="state==3" class="matching-btn left"></div>
+	    			<!--成绩结果-->
 	    			<div v-if="state==4" class="finish-btn left"></div>
 	    			<div class="match-text-icon left"></div>
 	    			<div class="match-person right">
@@ -31,6 +35,7 @@
 								<p class="color-blue1 font10" v-if="state==1">进行中</p>
 								<p class="arrow-down-blue" v-if="state==1"></p>
 							</div>
+							<!--中间的线-->
 							<div class="line-dot  line-dot-active">····· <span class="state-line-active"></span> ·····</div>
 							<div>
 								<p :class="{'array-active':state>=2,'array':state<2}"></p>
@@ -99,6 +104,7 @@
 							如何玩
 						</div>
 					</div>
+					<!--等待比赛-->
 					<div v-if="state==3">
 						<div class="tit-bg-big">
 							<span class="tit-chinese">比赛直播</span>
@@ -343,6 +349,7 @@
 							</div>
 						</div>
 					</div>
+					<!--比赛结束-->
 					<div v-if="state==4">
 						<div class="tit-bg-big">
 							<span class="tit-chinese">比赛数据</span>
@@ -602,7 +609,7 @@
 		data:function(){
 			return{
 				matchBanner:require("./../../image/match-banner.jpg"),
-				state:0, //1.报名 2.布阵 2.等待比赛 3.比赛结果
+				state:1, //1.报名 2.布阵 2.等待比赛 3.比赛结果
                 rankList:[{
                 	name:'大时代插曲',
                 	score:2665,
@@ -653,7 +660,7 @@
 		components:{Lineup,Countdown},
 		mounted:function(){ 
 		    window.scrollTo(0,0);//页面跳转时在顶部
-		    this.getMatchDetail();
+		    //this.getMatchDetail();
 	    },
 		methods:{
 			showLineupBox(){

@@ -77,13 +77,14 @@
 	</div>
 </template>
 <script>
+    import axios from 'axios'
 	export default{
 		data:function(){
 			return {
 				mobile:'',
 				password:'',
 				message:'',
-				isAgreeD : false,
+				isAgreeD : true,
 				info : "登录成功", //登录成功返回的信息
 			    swiperOptionSimple:{
 			    	pagination: '.swiper-pagination',
@@ -131,19 +132,25 @@
 					}).then(function(resule){
 
                         if(resule.data.info == that.info){
-                        	//储存
+                        	//储存头
                         	window.localStorage.t = resule.data.data.auth_token;
+                        	if(localStorage.t){
+								//登录成功后，在加头信息，不认取的有误
+								axios.defaults.headers.common['Authorization'] = localStorage.t;
+							}
                         	location.href="/#/user";
                         }
-						console.log(resule.data.info);
-					}).catch(function(e){
-                            console.log(e);
-                        	//账户或者密码不正确
-                        	//that.message = "账户或者密码错误!";
-                       
+					}).catch(function(error){
+
+                        if(error.response){
+                            console.log(error.response.data.info);
+                            that.message = error.response.data.info;
+                        }else{
+                            //一些错误是在设置请求时触发的
+                            console.log('Error',error.message);
+                        }                     
 					});					
 				}
-
 
 			},
 			test:function(){

@@ -121,9 +121,50 @@
 
 .logo-box .head-bg-big{
     .logo-box-position(35px,25px);
+    overflow: hidden;
+    z-index: 902;
+    border-radius: 50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+    img{
+    	position: relative;
+    	z-index: 901;
+    }
+}
+.logo-box{
+	.money{
+		position: absolute;
+		bottom: 35px;
+		left: 110px;
+		p{
+			color: #2f5465;
+			position: relative;
+			top: -15px;
+			left: 0;
+		}
+		span{
+			display: inline-block;
+		}
+		.icon1{
+             width: 25px;
+             height: 25px;
+			margin-right: 10px;
+		}
+		.num{
+			margin-right: 18px;
+			position: relative;
+			top: -8px;
+			left: 0;
+		}
+		img{
+			width: 100%;
+		}
+	}
 }
 .account{
-    .logo-box-position(35px,125px);
+    .logo-box-position(35px,110px);
 }
 .gold{
     .logo-box-position(80px,160px);

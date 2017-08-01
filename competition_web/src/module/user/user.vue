@@ -459,14 +459,22 @@
 				return this.$store.state.user;
 			},
 		},
+		created:function(){
+		
+		},
 		mounted:function(){ 
+
 			window.scrollTo(0,0);//页面跳转时在顶部
+			
+			console.log(location.t);
 			//如果状态中没有用户信息对象才查询否则直接取
 			if(!this.user.nickname){
+				console.log(location.t);
                 this.getUserInfo();
 			}else{
 				this.isGetUser = true;
 			}
+
 	    },
 	    components:{selectWeb,UserInfo,DepositAlipay,Bindalipay,Codetopay,Diamondpay},
 		methods:{

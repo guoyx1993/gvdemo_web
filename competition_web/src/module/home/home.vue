@@ -7,21 +7,35 @@
 				<div class="left left-nav">
 				    <!--电竞经理账号-->
 					<div class="logo-box">
-						<span class="head-bg-big"><img src="./../../image/head-big.png"></span>
-						<span class="account color-account">电竞经理账号</span>
-						<span class="gold">15</span>
-						<span class="stone">6</span>
+						<span class="head-bg-big" v-if="!this.$store.state.user.nickname"><img src="./../../image/head-big.png"></span>
+						<span class="head-bg-big" v-if="this.$store.state.user.nickname"><img :src="this.$store.state.user.head"></span>
+						<span class="account color-account" v-if="!this.$store.state.user.nickname">您好，欢迎<router-link to="/login">登录</router-link></span>
+						<span class="account color-account" v-if="this.$store.state.user.nickname" v-text="this.$store.state.user.nickname"></span>
+						<!--現實的金幣-->
+						<div class="money" v-if="!this.$store.state.user.nickname">
+						<p>登录后查看自己的比赛、资产等</p>
+						</div>
+						<div class="money" v-if="this.$store.state.user.nickname">
+						    <span class="icon1"><img src="./../../image/gold.png" alt=""></span>
+						    <span class="num">0</span>
+						    <span class="icon1"><img src="./../../image/stone.png" alt=""></span>
+						    <span class="num">0</span>
+						    <span class="icon1"><img src="./../../image/stone.png" alt=""></span>
+						    <span class="num">0</span>
+						</div>
+<!-- 						<span class="gold">15</span>
+						<span class="stone">6</span> -->
 					</div>
 					<!--查看我的比赛-->
 					<div class="match-box" v-if="!myMatchShow" @click="showMyMatchData">
 					    <span class="my-match">查看我的比赛</span>
 						<img class="match-new" src="./../../image/match-new.png">
-						<span class="new-number">2</span>
+						<span class="new-number" v-show="this.$store.state.user.nickname" v-text="this.$store.state.user.activity_limit_ed"></span>
 					</div>
 					<div class="match-box-data" v-if="myMatchShow">
 					    <p class="all-match">查看所有比赛  <span class="more-right"></span></p>
 						<img class="match-new" src="./../../image/match-new.png">
-						<span class="new-number">2</span>
+						<span class="new-number" v-show="this.$store.state.user.nickname" v-text="this.$store.state.user.activity_limit_ed"></span>
 						<ul>
 							<li>
 								<span class="match-box-data-n">LPL-周末(免费场)</span>
@@ -512,6 +526,7 @@
 						<img src="./../../image/game-banner2-title.png">
 						<div  class="game-list">
 						    <p class="game-title">今天赛事</p>
+						    <!--赛事列表-->
 						    <ul class="home">
 						    	<li v-for="game in gameList">
 						    	    <router-link :to="'/match/detail/'+game.id" class="game-item"> 
@@ -666,7 +681,8 @@
 		computed: {
 		    swiper() {
 		        return this.$refs.mySwiper.swiper;
-		    }
+		    },
+	
 		},
 		mounted:function(){
 			//是否使用固定滚动条事件
@@ -675,6 +691,10 @@
 		    	_this.newScroll();
 		    },3000);
 		    this.getGameList();
+		    //没有的时候获取
+            // if(!this.user.nickname){
+            //     this.getUserInfo();
+            // }
 		},
 		methods:{
 			toggleGame:function(){
@@ -718,7 +738,16 @@
 			},
 			showMyMatchData:function(){
 				this.myMatchShow = true;
-			}
+			},
+            //登录后获取用户信息
+            getUserInfo : function(){
+                this.$http.get("api/user/userinfo").then(function(resule){
+                	if (!resule.data.code) {
+                        this.$store.state.user = resule.data.data;
+                        //this.user = resule.data.data;
+                	}
+                }).catch();
+            },
 		}
 	}
 </script>
